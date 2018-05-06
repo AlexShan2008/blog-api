@@ -1,7 +1,8 @@
 'use strict';
 
 module.exports = appInfo => {
-  const config = exports = {};
+  const config = exports = {
+  };
 
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1525493952176_3439';
@@ -13,15 +14,20 @@ module.exports = appInfo => {
   // 以对象的形式操作数据库
   config.mongoose = {
     client: {
-      url: 'mongodb://127.0.0.1/alexshan',
-      options: {}
+      url: 'mongodb://127.0.0.1/alexshan'
     }
   };
 
   // csrf（跨站访问安全设置）
   config.security = {
-    csrf: false
+    csrf: false,
+    domainWhiteList: ['http://localhost:3000']
   };
+  
+  // 允许跨域携带cookie
+  config.cors = {
+    credentials: true
+  }
 
   return config;
 };

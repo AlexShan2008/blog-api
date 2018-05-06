@@ -19,7 +19,6 @@ config.keys = appInfo.name + '_1525493952176_3439';
 ```
 ### 1.2 设置数据库连接
 `/config.default.js`
-
 ```
 config.mongoose = {
     client: {
@@ -28,6 +27,18 @@ config.mongoose = {
     }
   };
 ```
+
+### 1.3 将数据库挂载到app上
+
+// {app_root}/config/plugin.js
+```
+exports.mongoose = {
+  enabled: true,
+  package: 'egg-mongoose'
+};
+```
+
+
 
 ## 2 添加 npm `scripts` 到 package.json：
 ```
@@ -317,8 +328,25 @@ describe('test/app/middleware/robot.test.js', () => {
 });
 ```
 
-## `CSRF` 跨站访问
+## `CSRF` 跨域处理
+> egg-cors
 > 每次服务端直出时附加一个CSRFToken，存在客户端的cookie中，用户提交时，携带cookie访问
+```
+$ npm i egg-cors --save
+
+// {app_root}/config/plugin.js
+exports.cors = {
+  enable: true,
+  package: 'egg-cors',
+};
+
+```
+//{app_root}/config/config.default.js
+```
+exports.security = {
+  domainWhiteList: [ 'http://localhost:3000' ],
+};
+```
 
 ### Postman 
 > 后台接口测试

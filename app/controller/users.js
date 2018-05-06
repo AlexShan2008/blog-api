@@ -5,6 +5,8 @@ class UsersController extends BaseController {
     let { ctx } = this;
     //1.得到请求体 {username,password,email}
     let user = ctx.request.body;
+    console.log(user)
+    
     try {
       //保存数据库{_id,username,password,email}
       user = await ctx.model.User.create(user);
