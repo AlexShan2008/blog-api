@@ -38,8 +38,6 @@ exports.mongoose = {
 };
 ```
 
-
-
 ## 2 添加 npm `scripts` 到 package.json：
 ```
 "scripts": {
@@ -48,13 +46,7 @@ exports.mongoose = {
 
 npm run dev //启动项目
 ```
-
-## 3 启动数据库`mongodb`
-```bash
-mongod --dbpath=c:\Mongondb\data
-```
-
-## 4 部署`run`
+### 2.1 部署`run`
 
 ```bash
 $ npm i
@@ -65,6 +57,24 @@ $ open http://localhost:7001/
 ```bash
 $ npm start
 $ npm stop
+```
+
+
+## 3 启动数据库`mongodb`
+```bash
+mongod --dbpath=c:\Mongondb\data
+```
+
+## 4 开启 validate 插件 egg-validate 作为 validate 插件的示例。
+```
+npm i egg-validate --save
+
+// config/plugin.js
+exports.validate = {
+  enable: true,
+  package: 'egg-validate',
+};
+
 ```
 
 ## 5 跑通路由
