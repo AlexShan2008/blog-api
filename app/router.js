@@ -11,8 +11,9 @@ module.exports = app => {
   router.post('/api/users/signin', controller.users.signin);
   router.get('/api/users/signout', controller.users.signout);
 
+  // RESTful API
   router.resources('categories', '/api/categories', controller.categories);
-  
+
   // router.get('/api/categories', controller.categories.index);
   // router.post('/api/categories', controller.categories.create);
   // router.put('/api/categories/:id', controller.categories.update);
@@ -21,7 +22,8 @@ module.exports = app => {
   router.resources('articles', '/api/articles', controller.articles);
 
   // 评论
-  router.get('/api/articles/pv/:id',controller.articles.addPv);
-  router.post('/api/articles/comment/:id',controller.articles.addComment);
-  
+  router.get('/api/articles/pv/:id', controller.articles.addPv);
+  router.post('/api/articles/comment/:id', controller.articles.addComment);
+  router.delete('/api/articles/:article_id/comment/:comment_id', controller.articles.removeComment);
+
 };

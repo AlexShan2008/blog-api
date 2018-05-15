@@ -323,7 +323,29 @@ exports.time = {
     name: '总耗时:'
 }
 ```
+
 ## 10. 单元测试`test`
+- TDD 
+> 测试驱动开发: 先写测试用例；需求需要非常明确和具体
+```
+assert.typeOf(foo,'string')
+```
+- BDD 
+> 行为驱动开发：先实现需求，再编写测试用例
+```
+foo.should
+```
+
+### 10.1测试框架
+`Mocha`
+- 让你跑通测试框框
+
+### 10.2断言库
+`assert should`
+- 用于断言库
+
+
+
 测试文件应该放在项目根目录下的 test 目录下，并以 test.js 为后缀名，即 {ROOT}/test/*/.test.js。 请注意是放在项目的根目录下，而非app目录下 // {ROOT}/test/app/middleware/robot.test.js
 ```
 const { app, mock, assert } = require('egg-mock/bootstrap');

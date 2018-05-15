@@ -5,7 +5,7 @@
 // 将mongoose挂载到app上
 exports.mongoose = {
   enabled: true,
-  package: 'egg-mongoose'
+  package: 'egg-mongoose',
 };
 
 // 跨域访问

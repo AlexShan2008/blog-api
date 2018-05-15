@@ -1,3 +1,5 @@
+'use strict';
+// 练习
 const Service = require('egg').Service;
 
 class TopicService extends Service {

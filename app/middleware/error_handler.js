@@ -1,10 +1,10 @@
+'use strict';
 /**
  * 统一错误处理
- * 
  * Controller 中 this.ctx.validate() 进行参数校验，失败抛出异常。
  * Service 中调用 this.ctx.curl() 方法访问 CNode 服务，可能由于网络问题等原因抛出服务端异常。
  * Service 中拿到 CNode 服务端返回的结果后，可能会收到请求调用失败的返回结果，此时也会抛出异常。
- */ 
+ */
 
 module.exports = () => {
   return async function errorHandler(ctx, next) {
