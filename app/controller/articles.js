@@ -17,7 +17,8 @@ module.exports = class ArticlesController extends BaseController {
   async create() {
     const { ctx } = this;
     let article = ctx.request.body;
-    article.user = this.user;
+    article.user = ctx.session.user;
+    console.log(ctx.session.user);
     try {
       article = await ctx.model.Article.create(article);
       this.success('文章发表成功');
@@ -65,7 +66,10 @@ module.exports = class ArticlesController extends BaseController {
     const { ctx } = this;
     const id = ctx.params.id;
     const comment = ctx.request.body;
+
     comment.user = this.user;
+    console.log(this.user);
+    console.log(comment);
     try {
       await ctx.model.Article.findByIdAndUpdate(id, { $push: { comments: comment } });
       this.success('评论成功');

@@ -26,7 +26,7 @@ module.exports = appInfo => {
   // csrf（跨站访问安全设置）
   config.security = {
     csrf: false,
-    domainWhiteList: [ 'http://localhost:3000' ],
+    domainWhiteList: [ 'http://127.0.0.1:3000', 'http://127.0.0.1:80' ],
   };
 
   // 允许跨域携带cookie

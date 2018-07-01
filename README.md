@@ -1,7 +1,19 @@
 # blog-api
 ## 前后端分离项目：后端只提供API接口
 
-## 1 项目初始化
+我们推荐直接使用脚手架，只需几条简单指令，即可快速生成项目:
+## 1 项目初始化方法1：使用脚手架快速构建
+```
+$ npm i egg-init -g
+$ egg-init egg-example --type=simple
+$ cd egg-example
+$ npm i
+启动项目:
+
+$ npm run dev
+$ open localhost:7001
+```
+## 1 项目初始化方法2：自定义安装
 ```
 mkdir egg-news
 cd egg-news
